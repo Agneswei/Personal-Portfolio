@@ -327,7 +327,6 @@ section h2::after {
 }
 
 
-
 /* Leave a Message Section */
 #leave-message-section {
     min-height: 50vh; /* Make it half the viewport height */
@@ -408,7 +407,7 @@ footer {
     font-size: 1rem;
     border: 1px solid #d7dbd8;
     border-radius: 0.25rem;
-    background-color: #bfd6c4;
+    background-color: #6D7895;
     color: #1a1c20;
     font-weight: 600;
     cursor: pointer;
@@ -416,7 +415,7 @@ footer {
 }
 
 #leave-message-section form button:hover {
-    background-color: #a5d6b0;
+    background-color: #414859;
     color: #ffffff;
 }
 
