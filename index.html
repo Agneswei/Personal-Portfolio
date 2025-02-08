@@ -18,20 +18,22 @@
             <div class="left">
                 <a href="#about-section">Agnes Wei</a>
             </div>
-            <div class="right">About</div>
+            <div class="right">
+                <a href="#about-section">About</a>
                 <!--<a href="#experience-section">Experience</a>-->
-                <a href="#projects-sections">Projects</a>
-                <a href="#skills-sections">Skills</a>
-                <a href="#leave-message-sections">Leave a message</a>
+                <a href="#projects-section">Projects</a>
+                <a href="#skills-section">Skills</a>
+                <a href="#leave-message-section">Leave a message</a>
              </div>
         </nav>    
     </header>
-    
+
+    <!-- SECTION 1: ABOUT-->
     <section id="about-section">
         <h2> Hello, World! I'm Agnes</h2>
         <div class="headshot">
             <picture>
-                <img src="images/IMG_3996.webp" alt="Agnes Wei headshot">
+                <img src="images/IMG_3996.webp" alt="headshot">
             </picture>
         </div>
 
@@ -54,12 +56,12 @@
         </div>
     </section>
 
+    <!-- SECTION 2: PROJECTS-->
     <div class="divider"></div>
     <section id="projects-section">
         <h2>Projects</h2>
 
         <div class="project-subsection">
-            <h3>Software</h3>
             <div #swiferRef="" class="swiper card-swiper">
             <div class="swiper-slide">
                 <a href="https://github.com/Agneswei/Lunchatron" target="_blank" class="project-box">
@@ -68,7 +70,7 @@
                     </picture>
                     <h4>Lunchatron</h4>
                     <h5><em>Python, FastAPI, Node.JS, React.JS</em></h5>
-                    <p>Lunchatron is an AI-powered recipe generator that transforms meal planning into an effortless experience. By analyzing uploaded or captured images of ingredients, Lunchatron suggests creative, personalized recipes tailored to the available items. Whether you're dealing with leftovers or fresh groceries, Lunchatron helps minimize food waste and inspires delicious meals in just a few clicks.
+                    <p>Lunchatron is an AI-powered recipe generator that creates personalized meal ideas by analyzing images of your ingredients.</p>
                     </p>
                 </a>
             </div>
@@ -77,8 +79,8 @@
     </section>
     <div class="divider"></div>
  
-        <!-- SECTION 2: SKILLS-->
-    <section id="skills" >
+    <!-- SECTION 3: SKILLS-->
+    <section id="skills-section" >
         <h2>Skills</h2>
         <div class="skills-container">
             <i class="fa-brands fa-python"></i>
@@ -95,9 +97,30 @@
     </section>
     <div class="divider"></div>
 
+    <!-- SECTION 4: MESSAGE-->
     <section id="leave-message-section">
         <h2>Leave a message :)</h2>
+
+        <div class="group">
+            <form id="comment-form" action="https://formspree.io/f/meoezpnq" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="form-message"></p>
+        </div>
     </section>
+
+    <footer>
+        <p>© 2025 Agnes Wei</p>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
