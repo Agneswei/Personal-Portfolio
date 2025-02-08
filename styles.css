@@ -441,15 +441,6 @@ footer {
         height: 18rem;
     }
 
-    #about-section .headshot img:not([src];) {
-        font-style: 1rem;
-        color:#6d7895;
-        text-align: center;
-        line-height: 1.5rem;
-        font-weight: 400;
-
-    }
-
     #projects-section .project-box {
         flex: 0 0 14rem; /* Adjust width for smaller screens */
     }
