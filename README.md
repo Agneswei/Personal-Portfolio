@@ -1,6 +1,6 @@
 # Personal-Portfolio
 
-Welcome to my personal portfolio website! This project showcases my work, skills, and experiences in a visually engaging and interactive manner. The website is designed to be fully responsive and provides visitors with an easy way to learn more about me and get in touch.
+Welcome to my personal portfolio website! This project showcases my work and skills in a visually engaging and interactive manner. The website is designed to be fully responsive and provides visitors with an easy way to learn more about me and get in touch.
 
 # Features
 * Built using only HTML and CSS
@@ -23,6 +23,7 @@ If you want to run this project locally:
 # Future Enhancements
 * Implementing a dynamic backend for better content management.
 * Enhancing the design for better user experience.
+* Adding experiences.
 
 Thank you for visiting my portfolio!
 
