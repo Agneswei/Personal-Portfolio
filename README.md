@@ -10,9 +10,8 @@ Welcome to my personal portfolio website! This project showcases my work, skills
 # Installation & Setup
 
 If you want to run this project locally:
-1. Clone the repositroy:
-git clone https://github.com/Agneswei/Personal-Portfolio.git
+1. Clone the repositroy: - git clone https://github.com/Agneswei/Personal-Portfolio.git
 2. Navigate to the project directory:
-cd Personal-Portfolio
+`cd Personal-Portfolio`
 3. Open index.html in a web browser
 
