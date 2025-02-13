@@ -77,7 +77,7 @@ section:nth-of-type(odd) {
 }
 
 section:nth-of-type(even) {
-    background-color: #ffffff; 
+    background-color: #fff9ea; /*light cream*/
 }
 
 /* Section Heading Styles */
@@ -148,9 +148,84 @@ section h2::after {
     max-width: 56.25rem;
 }
 
-#about-section .bio p {
-    font-size: 17px;
-    font-weight: 400;
+.home-content h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.typing-text {
+    font-weight: 700;
+    font-size: inherit;
+    color: #6D7895;
+}
+.cursor {
+    font-size: 24px;
+    font-weight: 500;
+    color: #6D7895;
+    display: inline-block;
+    animation: blink 0.6s step-end infinite;
+}
+
+.typing-text span {
+    color: var(--text-color);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #6D7895; 
+    width: 0;
+    animation: typing 3s steps(20, end) forwards, blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes words {
+    0%, 19% {
+        content: 'Computer Science Student';
+    }
+    21%, 39% {
+        content: 'Web Developer';
+    }
+    41%, 59% {
+        content: 'Software Developer';
+    }
+    61%, 79% {
+        content: 'Creative Thinker';
+    }
+}
+
+@keyframes blink {
+    50% { opacity: 0;}
+}
+
+.typing-text span::before {
+    content: 'Computer Science Student';
+    animation: words 12s infinite;
+}
+
+.typing-text::after {
+    content: '|';
+    margin-left: 2px;
+    animation: caret 0.5s step-end infinite;
+}
+
+#about-section h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 #about-section .social-links {
@@ -240,7 +315,33 @@ section h2::after {
     font-weight: 700;
 }
 
-.project-subsection {
+.project-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.project-icons i {
+    font-size: 32px;
+    color: #6D7895;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-icons i:hover {
+    color: #1a1c20;
+    transform: scale(1.2);
+}
+
+.project-icons img.tech-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+
+.project-box {
     width: 100%;
     margin-bottom: 4rem; /* Add space between subsections */
 }
