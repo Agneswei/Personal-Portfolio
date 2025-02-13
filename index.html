@@ -30,7 +30,11 @@
 
     <!-- SECTION 1: ABOUT-->
     <section id="about-section">
-        <h2> Hello, World! I'm Agnes</h2>
+        <div class="home-content">
+            <h2> Hello, World! It's <span>Agnes</span></h2>
+            <h3>I'm a <span class="typing-text"></span><span class="cursor"></span></h3>
+        </div>
+        
         <div class="headshot">
             <picture>
                 <img src="images/IMG_3996.webp" alt="headshot">
@@ -39,7 +43,7 @@
 
     
         <div class="bio">
-            <p> Hey! I'm Agnes, a computer science student who's incredibly excited about software development and UX design.
+            <p> Hey! I'm Agnes, a Computer Science student at Concordia Unviersity, passionate about software development, UX/UI design, and building engaging interactive experiences on the web.
             </p> <br>
             <p>
                 Outside of career and academics, I enjoy photography and reading!
@@ -61,7 +65,7 @@
     <section id="projects-section">
         <h2>Projects</h2>
 
-        <div class="project-subsection">
+        <div class="project-box">
             <div #swiferRef="" class="swiper card-swiper">
             <div class="swiper-slide">
                 <a href="https://github.com/Agneswei/Lunchatron" target="_blank" class="project-box">
@@ -69,7 +73,16 @@
                         <img src="images/lunchatron.webp" alt="Lunchatron">
                     </picture>
                     <h4>Lunchatron</h4>
-                    <h5><em>Python, FastAPI, Node.JS, React.JS</em></h5>
+
+                    <div class="project-icons">
+                        <i class="fa-brands fa-python"></i>
+                        <svg class="tech-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#009688"/> <!-- Change this color -->
+                            <text x="7" y="15" fill="white" font-size="10px" font-weight="bold">Fast</text>
+                        </svg>
+                        <i class="fa-brands fa-node-js"></i>
+                        <i class="fa-brands fa-react"></i>
+                    </div>
                     <p>Lunchatron is an AI-powered recipe generator that creates personalized meal ideas by analyzing images of your ingredients.</p>
                     </p>
                 </a>
@@ -123,14 +136,46 @@
         <p>© 2025 Agnes Wei</p>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-
- 
-
-
-        
-      
 
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const typingElement = document.querySelector(".typing-text");
+        const words = ["Computer Science Student", "Web Developer", "Software Developer", "Creative Thinker"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            let currentWord = words[wordIndex];
+            let displayText = isDeleting ? 
+                currentWord.substring(0, charIndex--) : 
+                currentWord.substring(0, charIndex++);
+
+            typingElement.textContent = displayText;
+
+            let typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentWord.length + 1) {
+                typingSpeed = 2000; // Wait before deleting
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        typeEffect();
+    });
+    </script>
+
+</body>
+</html>
+
 </body>
 </html>
