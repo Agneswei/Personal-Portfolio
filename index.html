@@ -15,6 +15,7 @@
 <body>
     <header>
         <nav>
+            
             <div class="left">
                 <a href="#about-section">Agnes Wei</a>
             </div>
@@ -25,6 +26,8 @@
                 <a href="#skills-section">Skills</a>
                 <a href="#leave-message-section">Leave a message</a>
              </div>
+
+             <button id="theme-toggle">🌙</button>
         </nav>    
     </header>
 
@@ -133,7 +136,8 @@
     </section>
 
     <footer>
-        <p>© 2025 Agnes Wei</p>
+        <p> Website programmed with HTML, CSS and Javascript</p>
+        <p>© 2025 Agnes Wei. All Rights. Reserved.</p>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -172,8 +176,44 @@
 
         typeEffect();
     });
-    </script>
 
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load user preference from local storage
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = "☀️";
+    }
+
+    // Toggle dark mode and save user preference
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = "☀️";
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            toggleButton.textContent = "🌙";
+            localStorage.setItem('dark-mode', null);
+        }
+});
+
+    /*Interactive Project Box*/
+    document.querySelectorAll('.project-box').forEach(box => {
+        box.addEventListener('mouseover', () => {
+            box.style.transform = 'scale(1.05)';
+            box.style.transition = 'transform 0.3s ease';
+        });
+
+        box.addEventListener('mouseout', () => {
+            box.style.transform = 'scale(1)';
+        });
+    });
+
+    
+
+ 
+    </script>
 </body>
 </html>
 
