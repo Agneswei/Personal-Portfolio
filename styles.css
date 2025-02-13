@@ -393,10 +393,14 @@ section h2::after {
     filter: grayscale(100%) brightness(0) invert(1);
 }
 
+
 .project-box {
+    display: block;
+    line-height: 1.4;
     width: 100%;
     margin-bottom: 4rem; /* Add space between subsections */
 }
+
 
 .projects-scroll-container {
     display: flex;
