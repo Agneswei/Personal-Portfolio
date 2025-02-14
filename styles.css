@@ -123,8 +123,8 @@ section h2::after {
 }
 
 #about-section .headshot {
-    width: 9rem; 
-    height: 9rem;
+    width: 9rem !important;
+    height: 9rem !important;
     border-radius: 50%; 
     overflow: hidden; 
     display: flex;
