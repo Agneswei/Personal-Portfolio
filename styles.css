@@ -123,14 +123,14 @@ section h2::after {
 }
 
 #about-section .headshot {
-    width: 9rem; /* Ensure same width & height */
+    width: 9rem; 
     height: 9rem;
-    border-radius: 50%; /* This keeps it circular */
-    overflow: hidden; /* Prevents the image from spilling out */
+    border-radius: 50%; 
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #a49c9c; /* Match the background if needed */
+    background-color: #a49c9c; 
     padding: 0%;
 }
 
@@ -138,8 +138,8 @@ section h2::after {
 #about-section .headshot img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills the circle */
-    border-radius: 50%; /* Ensures circular shape is maintained */
+    object-fit: cover; 
+    border-radius: 50%; 
 }
 
 
