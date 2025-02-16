@@ -15,7 +15,7 @@ If you want to run this project locally:
 `cd Personal-Portfolio`
 3. Open `index.html` in a web browser
 
-If you want to open it directly, click [here](agneswei.com).
+If you want to open it directly, click [here](https://agneswei.com/).
 
 # Usage
 * Explore different sections using the navigation menu.
