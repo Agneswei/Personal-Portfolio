@@ -591,6 +591,52 @@ footer {
     color: #ffffff;
 }
 
+.projects-container {
+    display: flex;             /* Enables side-by-side layout */
+    justify-content: center;   /* Centers items horizontally */
+    align-items: stretch;      /* Aligns both projects evenly */
+    flex-wrap: wrap;           /* Wrap to new row on small screens */
+    gap: 20px;                 /* Adds spacing between projects */
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-box {
+    flex: 1;                   /* Ensures equal width */
+    max-width: 450px;          /* Prevents them from being too wide */
+    background: #fff9ea;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure images fit inside the project box */
+.project-box img {
+    width: 100%;               /* Makes images responsive */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column; /* Stack on smaller screens */
+        align-items: center;
+    }
+
+    .project-box {
+        width: 90%;             /* Take most of the screen width */
+    }
+}
+
+
 /* Media Queries for Responsiveness */
 @media (min-width: 1690px) {
     .swiper-wrapper {
