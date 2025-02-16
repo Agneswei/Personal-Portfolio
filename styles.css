@@ -185,7 +185,7 @@ section h2::after {
 }
 
 .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .dark-mode section h2 {
@@ -197,6 +197,17 @@ section h2::after {
 }
 
 .dark-mode .typing-text {
+    color: #ffffff;
+}
+
+.dark-mode button {
+    background-color: #444;
+    color: #white;
+    border: 1px solid #999;
+}
+
+.dark-mode button:hover {
+    background-color: #666;
     color: #ffffff;
 }
 
@@ -236,7 +247,7 @@ section h2::after {
     to {
         width: 100%;
     }
-}
+}   
 
 @keyframes blink {
     50% {
