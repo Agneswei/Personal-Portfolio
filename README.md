@@ -1,6 +1,6 @@
 # Personal-Portfolio
 
-Welcome to my personal portfolio website! This project showcases my work and skills in a visually engaging and interactive manner. The website is designed to be fully responsive and provides visitors with an easy way to learn more about me and get in touch.
+Welcome to my personal portfolio website! This project showcases my work and skills in a visually engaging and interactive manner. The website is designed to be fully responsive and provides visitors an easy way to learn more about me and get in touch.
 
 # Features
 * Built using HTML, CSS, and JavaScript
@@ -15,6 +15,8 @@ If you want to run this project locally:
 `cd Personal-Portfolio`
 3. Open `index.html` in a web browser
 
+If you want to open it directly, click [here](https://agneswei.com/).
+
 # Usage
 * Explore different sections using the navigation menu.
 * Check out my featured projects in the "Projects" section.
@@ -22,7 +24,7 @@ If you want to run this project locally:
 
 # Future Enhancements
 * Implementing a dynamic backend for better content management.
-* Enhancing the design for better user experience.
+* Enhancing the design for a better user experience.
 * Adding experiences.
 
 Thank you for visiting my portfolio!
