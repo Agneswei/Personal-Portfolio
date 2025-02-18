@@ -66,6 +66,17 @@ nav .right a:hover {
     transition: color 0.3s ease-in-out;
 }
 
+h1 {
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+  
 
 /* General Section Styles */
 section {
@@ -588,13 +599,11 @@ section h2::after {
 
 /* Leave a Message Section */
 #leave-message-section {
-    min-height: 50vh; /* Make it half the viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Ensure it doesn't stretch beyond this */
+    margin: auto; /* Center it properly */
     text-align: center;
-    gap: 1rem;
+    overflow: hidden; /* Prevent unexpected overflows */
 }
 
 #leave-message-section h2 {
@@ -734,6 +743,24 @@ footer {
 
     #theme-toggle i {
         font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #leave-message-section h2 {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+        max-width: 90%;  /* Limit width */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: center; /* Ensure proper alignment */
+    }
+}
+
+@media (max-width: 576px) {
+    #leave-message-section h2 {
+        font-size: 1.75rem; /* Even smaller for extra small screens */
     }
 }
 
