@@ -18,7 +18,7 @@
         <nav>
             
             <div class="left">
-                <a href="#about-section">Agnes Wi</a>
+                <a href="#about-section">Agnes Wei</a>
             </div>
             <div class="right">
                 <a href="#about-section">About</a>
@@ -27,8 +27,10 @@
                 <a href="#skills-section">Skills</a>
                 <a href="#leave-message-section">Leave a message</a>
              </div>
-
-             <button id="theme-toggle">🌙</button>
+             <button id="theme-toggle">
+                <span id="theme-text">Dark Mode</span>
+                <i class="fa-solid fa-moon"></i>
+             </button>
         </nav>    
     </header>
 
@@ -198,27 +200,29 @@
 });
 
     });
-
     const toggleButton = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Load user preference from local storage
-    if (localStorage.getItem('dark-mode') === 'enabled') {
-        body.classList.add('dark-mode');
-        toggleButton.textContent = "☀️";
+    function updateThemeUI() {
+    if (body.classList.contains('dark-mode')) {
+        toggleButton.innerHTML = '<span id="theme-text">Light Mode</span> <i class="fa-solid fa-sun"></i>';
+    } else {
+        toggleButton.innerHTML = '<span id="theme-text">Dark Mode</span> <i class="fa-solid fa-moon"></i>';
     }
+}
 
-    // Toggle dark mode and save user preference
     toggleButton.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            toggleButton.textContent = "☀️";
-            localStorage.setItem('dark-mode', 'enabled');
-        } else {
-            toggleButton.textContent = "🌙";
-            localStorage.setItem('dark-mode', null);
-        }
-});
+        localStorage.setItem('dark-mode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        updateThemeUI();
+    });
+
+    // Load user preference
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+    updateThemeUI();
+
 
     /*Interactive Project Box*/
     document.querySelectorAll('.project-box').forEach(box => {
