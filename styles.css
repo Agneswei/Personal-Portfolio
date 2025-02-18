@@ -31,9 +31,9 @@ nav {
     background-color: #6D7895;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 3.125rem;
     height: 5rem;
-    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -46,6 +46,12 @@ nav .left a {
     color: var(--text-color);
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between links and toggle */
 }
 
 nav .right a {
@@ -213,6 +219,49 @@ section h2::after {
 .dark-mode button:hover {
     background-color: #666;
     color: #ffffff;
+}
+
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    background-color: #ddd;
+    color: 222;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#theme-toggle i {
+    font-size: 1.2rem; /* Increases icon size */
+}
+
+#theme-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Dark mode styles */
+.dark-mode #theme-toggle {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #6D7895;
+}
+
+.dark-mode #theme-text {
+    color: #333; 
+}
+
+.dark-mode #theme-toggle:hover,
+#theme-toggle:hover {
+    background-color: #b1b1b1; /* Adds a hover effect */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .home-content h3 {
@@ -633,6 +682,20 @@ footer {
 
     .project-box {
         width: 90%;             /* Take most of the screen width */
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    #theme-toggle {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        gap: 5px;
+    }
+
+    #theme-toggle i {
+        font-size: 1rem;
     }
 }
 
