@@ -513,8 +513,46 @@ section h2::after {
 
 .project-box p {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
     color: #494a4a;
+    transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .project-box p {
+    color: #ffffff;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-links .btn {
+    padding: 6px 12px;
+    background-color: #6D7895;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-links .btn:hover {
+    background-color: #414859;
+}
+
+/* Dark Mode - Inverted Colors */
+.dark-mode .project-links .btn {
+    background-color: white;
+    color: #6D7895;
+    border: 2px solid #6D7895;
+}
+
+.dark-mode .project-links .btn:hover {
+    background-color: #6D7895;
+    color: white;
 }
 
 /* Skills Section */
