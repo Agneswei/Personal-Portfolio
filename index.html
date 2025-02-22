@@ -141,7 +141,7 @@
         <h2>Leave a message :)</h2>
 
         <div class="group">
-            <form id="comment-form" action="https://formspree.io/f/meoezpnq" method="POST">
+            <form id="comment-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
 
@@ -244,9 +244,42 @@
         });
     });
 
-    
+    const form = document.getElementById('comment-form');
+    const status = document.getElementById('form-message');
 
- 
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        };
+
+        try {
+        const response = await fetch('http://localhost:5000/send', {  // Update for production later
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            status.textContent = "✅ Message sent successfully!";
+            status.style.color = "green";
+            form.reset();
+        } else {
+            status.textContent = "❌ Error sending message.";
+            status.style.color = "red";
+        }
+        } catch (error) {
+        console.error("Error:", error);
+        status.textContent = "⚠️ Network error. Please try again.";
+        status.style.color = "red";
+        }
+    });
+        
+
+    
     </script>
 </body>
 </html>
