@@ -270,11 +270,11 @@
         console.log('Server response:', result);
 
         if (response.ok) {
-            status.textContent = "✅ Message sent successfully!";
+            status.textContent = "Message sent successfully!";
             status.style.color = "green";
             form.reset();
         } else {
-            status.textContent = "❌ Error sending message.";
+            status.textContent = "Error sending message.";
             status.style.color = "red";
         }
         } catch (error) {
