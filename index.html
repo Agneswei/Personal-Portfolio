@@ -137,20 +137,20 @@
     <div class="divider"></div>
 
     <!-- SECTION 4: MESSAGE-->
-    <section id="leave-message-section" action="https://formspree.io/f/meoezpnq" method="POST">
+    <section id="leave-message-section">
         <h2>Leave a message :)</h2>
 
         <div class="group">
-            <form id="comment-form">
+            <form id="comment-form" action="https://formspree.io/f/meoezpnq" method="POST">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
-
+    
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-
+    
                 <label for="message">Message</label>
                 <textarea id="message" name="message" cols="30" rows="10" required></textarea>
-
+    
                 <button type="submit">Submit</button>
             </form>
 
@@ -246,44 +246,45 @@
 
     /* message form */
     const form = document.getElementById('comment-form');
-const status = document.getElementById('form-message');
+    const status = document.getElementById('form-message');
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const formData = new FormData(form);
+        status.textContent = "Sending...";
+        status.style.color = "#6D7895";
 
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
 
-        if (response.ok) {
-            status.textContent = "Message sent successfully!";
-            status.style.color = "green";
-            form.reset();
-        } else {
-            const data = await response.json();
-            if (data.errors) {
-                status.textContent = data.errors.map(error => error.message).join(", ");
-            } else {
+        fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    status.textContent = "Message sent successfully!";
+                    status.style.color = "green";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (data.errors) {
+                            status.textContent = data.errors.map(error => error.message).join(", ");
+                        } else {
+                            status.textContent = "Error sending message. Please try again.";
+                        }
+                        status.style.color = "red";
+                    });
+                }
+            })
+            .catch(error => {
+                // Only show generic error message for network errors
                 status.textContent = "Error sending message. Please try again.";
-            }
-            status.style.color = "red";
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        status.textContent = "Network error. Please try again.";
-        status.style.color = "red";
-    }
-});
-        
-
-    
+                status.style.color = "red";
+                console.error("Form submission error:", error);
+            });
+        });    
     </script>
 </body>
 </html>
